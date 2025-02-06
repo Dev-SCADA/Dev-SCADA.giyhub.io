@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SCADA Data Base Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      /* กำหนดพื้นหลังเป็นรูปภาพ */
+      background-image: url("file:///C:/Users/401418/Downloads/c14a921c789d12531700a4e752c9d816.jpg");
+      background-size: cover;           /* ปรับขนาดให้ครอบคลุมหน้าจอ */
+      background-position: center;      /* จัดตำแหน่งรูปตรงกลาง */
+      background-repeat: no-repeat;     /* ไม่ให้ซ้ำรูป */
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      text-align: center;
+      width: 500px;
+    }
+    h1 {
+      background-color: rgb(255, 0, 21);
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+    input {
+      width: 80%; /* ลดขนาดของ input */
+      padding: 8px;
+      margin: 10px auto; /* ตั้งค่า margin อัตโนมัติเพื่อให้ input อยู่ตรงกลาง */
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      display: block; /* ทำให้ input จัดเรียงแนวตั้ง */
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: rgb(255, 0, 21);
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: darkblue;
+    }
+    input[name="password"] {
+      margin-bottom: 15px; /* เพิ่มระยะห่างด้านล่างของช่องรหัสผ่าน */
+    }
+    button {
+      margin-top: 10px; /* เพิ่มระยะห่างด้านบนของปุ่ม */
+    }
+
+  </style>
+  <script>
+    function login() {
+      // รับค่า username และ password จาก input
+      var username = document.getElementsByName("username")[0].value;
+      var password = document.getElementsByName("password")[0].value;
+      
+      // ตรวจสอบข้อมูล (ในที่นี้ใช้ค่า username="SCADA01" และ password="123456789")
+      if(username === "SCADA01" && password === "123456789") {
+         // ถ้าข้อมูลถูกต้อง ให้เปลี่ยนเส้นทางไปยังหน้าเว็บที่ 2 (technician.html)
+         window.location.href = "technician.html";
+      } else {
+         alert("Username หรือ Password ไม่ถูกต้อง!");
+      }
+    }
+  </script>
+</head>
+<body>
+
+  <div class="container">
+    <h1>WELCOME SCADA</h1>
+    <input type="text" name="username" placeholder="Username">
+    <input type="password" name="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+  </div>
+
+</body>
+</html>
